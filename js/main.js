@@ -20,6 +20,10 @@ function el(tag, className, text) {
 }
 
 /* ── 1. STATIC TEXTS ──────────────────────────────────────── */
+// #region agent log
+fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'A',location:'js/main.js:static',message:'main.js started',data:{hasSiteData:typeof SITE_DATA!=='undefined',name:typeof SITE_DATA!=='undefined'?SITE_DATA.name:null,projectCount:typeof SITE_DATA!=='undefined'?SITE_DATA.projects&&SITE_DATA.projects.length:null,innerWidth:window.innerWidth},timestamp:Date.now()})}).catch(()=>{});
+window.addEventListener('error',(e)=>{fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'A',location:'js/main.js:onerror',message:'window error',data:{err:String(e.message),file:e.filename,line:e.lineno},timestamp:Date.now()})}).catch(()=>{});});
+// #endregion
 document.getElementById("nav-name").textContent   = SITE_DATA.name;
 document.getElementById("hero-greeting").textContent = SITE_DATA.greeting;
 document.getElementById("hero-name").textContent  = SITE_DATA.name;
@@ -98,15 +102,25 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const navToggle = document.getElementById("nav-toggle");
 const navLinks  = document.querySelector(".nav-links");
 
-navToggle.addEventListener("click", () => {
+// #region agent log
+fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'A',location:'js/main.js:nav-bind',message:'binding mobile menu listeners',data:{hasToggle:!!navToggle,hasLinks:!!navLinks,toggleDisplay:navToggle?getComputedStyle(navToggle).display:null,linksPos:navLinks?getComputedStyle(navLinks).position:null,mq:window.matchMedia('(max-width: 768px)').matches},timestamp:Date.now()})}).catch(()=>{});
+// #endregion
+navToggle.addEventListener("click", (event) => {
   // Toggle the "open" class on button + menu panel
   const isOpen = navLinks.classList.toggle("open");
   navToggle.classList.toggle("open", isOpen);
   navToggle.setAttribute("aria-expanded", isOpen);
+  // #region agent log
+  const cs = getComputedStyle(navLinks);
+  fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'B',location:'js/main.js:nav-click',message:'hamburger clicked',data:{isOpen,targetTag:event.target&&event.target.tagName,currentTag:event.currentTarget&&event.currentTarget.tagName,navClass:navLinks.className,btnClass:navToggle.className,maxHeight:cs.maxHeight,navHeight:navLinks.getBoundingClientRect().height,innerWidth:window.innerWidth},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
 });
 
 // Close the menu automatically after clicking a link
 navLinks.addEventListener("click", (event) => {
+  // #region agent log
+  fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'D',location:'js/main.js:nav-link-click',message:'nav panel click',data:{targetTag:event.target&&event.target.tagName,willClose:event.target&&event.target.tagName==='A'},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
   if (event.target.tagName === "A") {
     navLinks.classList.remove("open");
     navToggle.classList.remove("open");
@@ -128,3 +142,6 @@ document.querySelectorAll(".reveal").forEach((section) => {
 
   observer.observe(section);
 });
+// #region agent log
+fetch('http://127.0.0.1:7437/ingest/9b4aa44e-0d3f-4972-b2c3-6ebe7fdab96d',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f7c45d'},body:JSON.stringify({sessionId:'f7c45d',runId:'pre-fix',hypothesisId:'E',location:'js/main.js:end',message:'main.js finished',data:{revealCount:document.querySelectorAll('.reveal').length,visibleCount:document.querySelectorAll('.reveal.visible').length,title:document.title,dataName:SITE_DATA.name},timestamp:Date.now()})}).catch(()=>{});
+// #endregion
