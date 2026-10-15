@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- ============================================================
      PORTFOLIO WEBSITE — index.html
      ------------------------------------------------------------
@@ -13,136 +13,153 @@
        automatically from data.js — no need to touch them.
 ============================================================ -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── Browser tab title (edit freely) ─────────────────────── -->
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Minimal personal portfolio website." />
+    <!-- ── Browser tab title (edit freely) ─────────────────────── -->
+    <title>Zahid — Portfolio</title>
+    <meta name="description" content="Minimal personal portfolio website." />
 
-  <!-- ── Favicon: optional. Drop your own "favicon.svg" next to
+    <!-- ── Favicon: optional. Drop your own "favicon.svg" next to
        this file and uncomment the line below. ────────────────── -->
-  <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
 
-  <!-- ── Font: Inter (clean modern font) with system fallbacks ── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    <!-- ── Font: Inter (clean modern font) with system fallbacks ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' 
+      viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='24' 
+      fill='%2338bdf8'/&gt;&lt;text x='50%' y='65%' font-size='56' 
+      font-family='sans-serif' font-weight='bold' fill='white' 
+      text-anchor='middle'&gt;Z&lt;/text&gt;&lt;/svg&gt;"
+    />
+    <!-- ── Our stylesheet ──────────────────────────────────────── -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <!-- ── Our stylesheet ──────────────────────────────────────── -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <!-- ==========================================================
+  <body>
+    <!-- ==========================================================
        NAVIGATION BAR (top)
        Sticky; links scroll smoothly to each section below.
   =========================================================== -->
-  <header class="navbar">
-    <div class="container nav-inner">
+    <header class="navbar">
+      <div class="container nav-inner">
+        <!-- Logo / name — text comes from data.js -->
+        <a href="#home" class="nav-logo"
+          >&#123;&#125; <span id="nav-name">Name</span
+        ></a>
 
-      <!-- Logo / name — text comes from data.js -->
-      <a href="#home" class="nav-logo">&#123;&#125; <span id="nav-name">Name</span></a>
+        <!-- Desktop links -->
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <!-- Desktop links -->
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <!-- Hamburger button — visible only on small screens -->
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-      <!-- Hamburger button — visible only on small screens -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <!-- ========================================================
+    <main>
+      <!-- ========================================================
          HERO — the big intro at the top
     ========================================================= -->
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <p class="hero-greeting" id="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name" id="hero-name">Your Name</h1>
-        <p class="hero-role" id="hero-role">Your Role or Tagline</p>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <p class="hero-greeting" id="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name" id="hero-name">Your Name</h1>
+          <p class="hero-role" id="hero-role">Your Role or Tagline</p>
 
-        <!-- Buttons: text + links live in data.js -->
-        <div class="hero-actions" id="hero-actions"></div>
-      </div>
-    </section>
+          <!-- Buttons: text + links live in data.js -->
+          <div class="hero-actions" id="hero-actions"></div>
+        </div>
+      </section>
 
-    <!-- ========================================================
+      <!-- ========================================================
          ABOUT — short bio
     ========================================================= -->
-    <section id="about" class="section reveal">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <p class="about-text" id="about-text">
-          Short introduction goes here (editable in js/data.js).
-        </p>
+      <section id="about" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <p class="about-text" id="about-text">
+            Short introduction goes here (editable in js/data.js).
+          </p>
 
-        <!-- Quick facts: label + value pairs, rendered from data.js -->
-        <ul class="about-facts" id="about-facts"></ul>
-      </div>
-    </section>
+          <!-- Quick facts: label + value pairs, rendered from data.js -->
+          <ul class="about-facts" id="about-facts"></ul>
+        </div>
+      </section>
 
-    <!-- ========================================================
+      <!-- ========================================================
          PROJECTS — cards generated automatically from data.js
          (to add a project: just append one entry to projects[])
     ========================================================= -->
-    <section id="projects" class="section section-alt reveal">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid" id="project-grid"></div>
-      </div>
-    </section>
+      <section id="projects" class="section section-alt reveal">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="project-grid" id="project-grid"></div>
+        </div>
+      </section>
 
-    <!-- ========================================================
+      <!-- ========================================================
          SKILLS — simple tag chips, rendered from data.js
     ========================================================= -->
-    <section id="skills" class="section reveal">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skill-tags" id="skill-tags"></div>
-      </div>
-    </section>
+      <section id="skills" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="skill-tags" id="skill-tags"></div>
+        </div>
+      </section>
 
-    <!-- ========================================================
+      <!-- ========================================================
          CONTACT — email button + social links from data.js
     ========================================================= -->
-    <section id="contact" class="section section-alt reveal">
-      <div class="container contact-inner">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-lead" id="contact-lead">Let's work together.</p>
-        <a class="btn btn-primary" id="contact-email" href="#">Say hello</a>
-        <div class="social-links" id="social-links"></div>
-      </div>
-    </section>
-  </main>
+      <section id="contact" class="section section-alt reveal">
+        <div class="container contact-inner">
+          <h2 class="section-title">Contact</h2>
+          <p class="contact-lead" id="contact-lead">Let's work together.</p>
+          <a class="btn btn-primary" id="contact-email" href="#">Say hello</a>
+          <div class="social-links" id="social-links"></div>
+        </div>
+      </section>
+    </main>
 
-  <!-- ==========================================================
+    <!-- ==========================================================
        FOOTER
   =========================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> <span id="footer-name">Name</span>. Built with ♥ and vanilla code.</p>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> <span id="footer-name">Name</span>. Built
+          with ♥ and vanilla code.
+        </p>
+      </div>
+    </footer>
 
-  <!-- ==========================================================
+    <!-- ==========================================================
        SCRIPTS — order matters:
        1) data.js   → your content (edit this!)
        2) main.js   → fills the page with that content
   =========================================================== -->
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -15,30 +15,28 @@
 
 const SITE_DATA = {
   /* ── 1. BASIC INFO ─────────────────────────────────────── */
-  name: "Your Name",                 // shows in navbar, hero, footer
-  role: "Front-End Developer",       // shown under your name in the hero
-  greeting: "Hello, I'm",            // small line above your name
+  name: "Zahid G. Koentjoro", // shows in navbar, hero, footer
+  role: "Front-End Developer", // shown under your name in the hero
+  greeting: "Hello, I'm", // small line above your name
 
   /* ── 2. HERO BUTTONS ───────────────────────────────────── */
   // "label" = button text, "link" = where it goes, "type" = style
   // type can be: "primary" (filled) or "ghost" (outlined)
   heroActions: [
     { label: "View Projects", link: "#projects", type: "primary" },
-    { label: "Contact Me",    link: "#contact",  type: "ghost" },
+    { label: "Contact Me", link: "#contact", type: "ghost" },
   ],
 
   /* ── 3. ABOUT SECTION ──────────────────────────────────── */
-  about: "I'm a developer who loves building clean, fast, and simple " +
-         "interfaces. I turn ideas into working websites — from the first " +
-         "sketch to the final line of code. When I'm not coding, you'll " +
-         "find me exploring new tech and contributing to open source.",
+  about:
+    "I'm an Infromatics Student at Jendral Soedirman University ",
 
   // Quick facts shown as small cards (add / remove lines freely)
   facts: [
-    { label: "Location",    value: "Your City, Country" },
-    { label: "Experience",  value: "2+ years" },
-    { label: "Email",       value: "you@example.com" },
-    { label: "Freelance",   value: "Available" },
+    { label: "Location", value: "Kota Pekalongan, Indonesia" },
+    { label: "Experience", value: "0+ years" },
+    { label: "Email", value: "zahidalmujadid@gmail.com" },
+    { label: "Freelance", value: "Available" },
   ],
 
   /* ── 4. PROJECTS ───────────────────────────────────────── */
@@ -47,23 +45,27 @@ const SITE_DATA = {
   projects: [
     {
       title: "Project One",
-      description: "A short description of what this project does and " +
-                   "the problem it solves. Keep it to 1–2 sentences.",
-      tags: ["HTML", "CSS", "JavaScript"],   // tech used
-      link: "https://github.com/yourusername",  // project URL (or "#")
+      description:
+        "Create a portofolio website with VibeCode",
+      tags: ["HTML", "CSS", "JavaScript"], // tech used
+      link: "https://github.com/zahidalmujadid-dev/Portofolio-part-2", // project URL (or "#")
     },
     {
       title: "Project Two",
-      description: "Another short description. Explain the goal, your " +
-                   "role, and one highlight of the result.",
-      tags: ["React", "Tailwind"],
+      description:
+        //"Another short description. Explain the goal, your " +
+        //"role, and one highlight of the result.",
+        "-",
+      tags: ["-", "-"],
       link: "#",
     },
     {
       title: "Project Three",
-      description: "A third project description. Show variety — " +
-                   "different tech, different problem.",
-      tags: ["Python", "Flask", "SQLite"],
+      description:
+        //"A third project description. Show variety — " +
+        //"different tech, different problem.",
+        "-",
+      tags: ["-", "-", "-"],
       link: "#",
     },
   ],
@@ -71,19 +73,26 @@ const SITE_DATA = {
   /* ── 5. SKILLS ─────────────────────────────────────────── */
   // Simple list of skills shown as chips. Add or remove freely.
   skills: [
-    "HTML", "CSS", "JavaScript", "React", "Git & GitHub",
-    "Figma", "Responsive Design", "Node.js", "Python",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Git & GitHub",
+    "Figma",
+    "Responsive Design",
+    "Node.js",
+    "Python",
   ],
 
   /* ── 6. CONTACT & SOCIAL ───────────────────────────────── */
-  contactLead: "Have a project in mind? Let's talk.",   // line above button
-  email: "you@example.com",                             // your real email
+  contactLead: "Have a project in mind? Let's talk.", // line above button
+  email: "zahidalmujadid@gmail.com", // your real email
 
   // Social links shown as pill buttons
   socials: [
-    { label: "GitHub",   link: "https://github.com/yourusername" },
-    { label: "LinkedIn", link: "https://linkedin.com/in/yourusername" },
-    { label: "Twitter",  link: "https://twitter.com/yourusername" },
+    { label: "GitHub", link: "https://github.com/zahidalmujadid-dev" },
+    { label: "LinkedIn", link: "https://linkedin.com/in/zahid-al-mujaddid-giat-koentjoro" },
+    { label: "Instagram", link: "https://instagram.com/macan_koeripan" },
   ],
 };
 
