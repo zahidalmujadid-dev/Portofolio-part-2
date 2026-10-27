@@ -97,7 +97,12 @@ a   { color: inherit; text-decoration: none; }
   height: 64px;
 }
 
-.nav-logo { font-weight: 700; font-size: 1.05rem; }
+.nav-logo { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; }
+
+.img-nav {
+   padding-right: 10px;
+   width: fit-content;
+}
 
 .nav-links { display: flex; gap: 1.75rem; }
 .nav-links a {
